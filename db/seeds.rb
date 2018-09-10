@@ -1,3 +1,22 @@
 noah = User.create(name: 'Noah', username: 'Noah', password: 'blah')
 
-budget1 = Budget.create(user_id: 2, title: 'blah', value: 6, period_in_days: 7)
+budget1 = Budget.create(user_id: 1, title: 'Main Budget', value: 4000, period_in_days: 7)
+
+budget_category1 = BudgetCategory.create(budget_id: 1, title: 'Misc')
+budget_category2 = BudgetCategory.create(budget_id: 2, title: 'Fixed Spending')
+budget_category3 = BudgetCategory.create(budget_id: 3, title: 'Food')
+budget_category4 = BudgetCategory.create(budget_id: 4, title: 'Ammo')
+
+transaction1 = Transaction.create(budget_category_id: 1, description: 'gas', value: 20)
+transaction1 = Transaction.create(budget_category_id: 1, description: 'electric', value: 12)
+transaction1 = Transaction.create(budget_category_id: 1, description: 'HBO', value: 15)
+transaction1 = Transaction.create(budget_category_id: 1, description: 'jammers', value: 8)
+transaction1 = Transaction.create(budget_category_id: 1, description: 'bike', value: 9)
+transaction1 = Transaction.create(budget_category_id: 2, description: 'rent', value: 4)
+transaction1 = Transaction.create(budget_category_id: 2, description: 'cable', value: 22)
+transaction1 = Transaction.create(budget_category_id: 2, description: 'school', value: 13)
+transaction1 = Transaction.create(budget_category_id: 3, description: 'bacon', value: 16)
+transaction1 = Transaction.create(budget_category_id: 3, description: 'poptarts', value: 19)
+transaction1 = Transaction.create(budget_category_id: 3, description: 'jam', value: 1)
+transaction1 = Transaction.create(budget_category_id: 1, description: 'minez', value: 2)
+transaction1 = Transaction.create(budget_category_id: 4, description: 'jamaica', value: 2)
