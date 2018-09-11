@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post '/login', to: 'auth#create'
       get '/authenticate', to: 'users#authenticate'
+      get '/budgets/:id/all', to: 'budgets#show_all_transactions'
       resources :users
       resources :budgets
       resources :budget_categories

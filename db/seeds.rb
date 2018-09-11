@@ -3,9 +3,9 @@ noah = User.create(name: 'Noah', username: 'Noah', password: 'blah')
 budget1 = Budget.create(user_id: 1, title: 'Main Budget', value: 4000, period_in_days: 7)
 
 budget_category1 = BudgetCategory.create(budget_id: 1, title: 'Misc')
-budget_category2 = BudgetCategory.create(budget_id: 2, title: 'Fixed Spending')
-budget_category3 = BudgetCategory.create(budget_id: 3, title: 'Food')
-budget_category4 = BudgetCategory.create(budget_id: 4, title: 'Ammo')
+budget_category2 = BudgetCategory.create(budget_id: 1, title: 'Fixed Spending')
+budget_category3 = BudgetCategory.create(budget_id: 1, title: 'Food')
+budget_category4 = BudgetCategory.create(budget_id: 1, title: 'Ammo')
 
 transaction1 = Transaction.create(budget_category_id: 1, description: 'gas', value: 20)
 transaction1 = Transaction.create(budget_category_id: 1, description: 'electric', value: 12)

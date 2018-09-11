@@ -9,6 +9,11 @@ class Api::V1::BudgetsController < ApplicationController
     render json: @budget
   end
 
+  def show_all_transactions
+    @budget = Budget.find(params[:id])
+    render json: @budget.transactions
+  end
+
   def create
     @budget = Budget.create(budget_params)
     render json: {budget: @budget}
