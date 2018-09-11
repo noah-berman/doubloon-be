@@ -36,7 +36,7 @@ class Api::V1::BudgetCategoriesController < ApplicationController
   private
 
   def budget_category_params
-    params.permit(:budget_id, :title, :value)
+    params.permit(:budget_id, :title)
   end
 
   def find_budget_category
