@@ -11,7 +11,7 @@ class Api::V1::TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.create(transaction_params)
-    render json: {budget: @transaction}
+    render json: {transaction: @transaction}
   end
 
   def new
@@ -36,7 +36,7 @@ class Api::V1::TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.permit(:budget_id, :title, :value)
+    params.permit(:budget_id, :budget_category_id, :description, :title, :value)
   end
 
   def find_budget_category

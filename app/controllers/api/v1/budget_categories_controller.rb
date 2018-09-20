@@ -14,6 +14,11 @@ class Api::V1::BudgetCategoriesController < ApplicationController
     render json: {budget: @budget_category}
   end
 
+  def show_all_transactions
+    @budget_category = BudgetCategory.find(params[:id])
+    render json: @budget_category.transactions
+  end
+
   def new
     @budget_category = BudgetCategory.create
   end
