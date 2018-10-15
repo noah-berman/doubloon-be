@@ -1,5 +1,5 @@
 class Api::V1::TransactionsController < ApplicationController
-  before_action :find_transaction, only: [:show, :delete]
+  before_action :find_transaction, only: [:show, :delete, :update]
 
   def index
     render json: { transaction: Transaction.all }
@@ -19,7 +19,7 @@ class Api::V1::TransactionsController < ApplicationController
   end
 
   def update
-    @transaction.update(budget_category_params)
+    @transaction.update(transaction_params)
     if @transaction.save
       render json: @transaction, status: :accepted
     else
@@ -39,7 +39,7 @@ class Api::V1::TransactionsController < ApplicationController
     params.permit(:budget_id, :budget_category_id, :description, :title, :value)
   end
 
-  def find_budget_category
+  def find_transaction
     @transaction = Transaction.find(params[:id])
   end
 
