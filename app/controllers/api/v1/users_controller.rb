@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  skip_before_action :authorized, only: %i[create]
   before_action :find_user, only: [:show, :delete]
 
   def index
@@ -14,7 +15,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    byebug
+    byebug;
     @user = User.create(user_params)
     if @user.valid?
       @token = encode_token(user_id: @user.id)
